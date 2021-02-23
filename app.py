@@ -8,7 +8,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the Random Forest CLassifier model
-filename = 'car_price_xgbr.pkl'
+filename = 'car_resale_price_prediction_rf.pkl'
 model = pickle.load(open(filename, 'rb'))
 
 
