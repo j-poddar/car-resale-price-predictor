@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Car Resale Price Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='car_icon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Car Resale Price Predictor</span></h2>
+            <div class='description'>
+    			<p>Please answer the following questions to predict the price:</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+        		
+                <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                                <!-- Car Brand -->
+                                                <h5 class="card-title">What is the brand of the car?</h5>
+                                                <select name="car_brand" id="car_brand" required="required">
+                                                    <option value="Maruti">Maruti</option>
+                                                    <option value="Hyundai">Hyundai</option>
+                                                    <option value="Datsun">Datsun</option>
+                                                    <option value="Honda">Honda</option>
+                                                    <option value="Tata">Tata</option>
+                                                    <option value="Chevrolet">Chevrolet</option>
+                                                    <option value="Toyota">Toyota</option>
+                                                    <option value="Jaguar">Jaguar</option>
+                                                    <option value="Mercedes_Benz">Mercedes-Benz</option>
+                                                    <option value="Audi">Audi</option>
+                                                    <option value="Skoda">Skoda</option>
+                                                    <option value="Jeep">Jeep</option>
+                                                    <option value="BMW">BMW</option>
+                                                    <option value="Mahindra">Mahindra</option>
+                                                    <option value="Ford">Ford</option>
+                                                    <option value="Nissan">Nissan</option>
+                                                    <option value="Renault">Renault</option>
+                                                    <option value="Fiat">Fiat</option>
+                                                    <option value="Volkswagen">Volkswagen</option>
+                                                    <option value="Volvo">Volvo</option>
+                                                    <option value="Mitsubishi">Mitsubishi</option>
+                                                    <option value="Land">Land</option>
+                                                    <option value="Daewoo">Daewoo</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="Force">Force</option>
+                                                    <option value="Isuzu">Isuzu</option>
+                                                    <option value="OpelCorsa">OpelCorsa</option>
+                                                    <option value="Ambassador">Ambassador</option>
+                                                    <option value="Kia">Kia</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            <br>
+                            <br>
+                            <br>
+                
+                            <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="card">
+                                            <h5 class="card-title">How many oners the car had before?</h5>
+                                               <!-- Owner -->
+                                               <select name="owner" id="owner" required="required">
+                                                   <option value="First_Owner">One owner</option>
+                                                   <option value="Second_Owner">Two owners</option>
+                                                   <option value="Third_Owner">Three owners</option>
+                                                   <option value="Fourth_and_Above_Owner">Four or more owners</option>
+                                                   <option value="Test_Drive_Car">This car was used for test drive</option>
+                                               </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <br>
+                            <br>
+                            <br>
+                
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <!-- Fuel Type -->
+                                            <h5 class="card-title">What is the fuel type?</h5>
+                                            <select name="fuel" id="fuel" required="required">
+                                                <option value="Diesel">Diesel</option>
+                                                <option value="Petrol">Petrol</option>
+                                                <option value="CNG">CNG</option>
+                                                <option value="LPG">LPG</option>
+                                                <option value="Electric">Electric</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <br>
+                            <br>
+                            
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">What is the Gear Transmission Type?</h5>
+                                            <!-- Transmission Type -->
+                                            <select name="transmission" id="transmission" required="required">
+                                                <option value="Manual">Manual</option>
+                                                <option value="Autometic">Autometic</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                
+                
+                            <br>
+                            <br>
+                            <br>
+                
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">What is the Seller Type?</h5>
+                                            <!-- Total Stops -->
+                                            <select name="seller_type" id="seller_type" required="required">
+                                                <option value="Individual">Individual</option>
+                                                <option value="Dealer">Dealer</option>
+                                                <option value="Trustmark_Dealer">Trustmark Dealer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                
+                
+                            <br>
+                            <br>
+                            <br>
+                
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">On which year the car was bought?</h5>
+                                            <!-- Year -->
+                                            <input type="number" name="year" id="year" required="required">
+                                        </div>
+                                    </div>
+                                </div>     
+                            </div> 
+                            
+                            <br>
+                            <br>
+                            <br>
+                            
+                            <br>
+                            <br>
+                            <br>
+                
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">How many km the car has been driven?</h5>
+                                            <!-- Year -->
+                                            <input type="number" name="km_driven" id="km_driven" required="required">
+                                        </div>
+                                    </div>
+                                </div>     
+                            </div> 
+                            
+                            <br>
+                            <br>
+                            <br>                          
+
+        		
+        		
+        		
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+    	
+    	<br>
+    	<br>
+    	<br>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/j-poddar/car-resale-price-predictor"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/jaitashri-poddar/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://medium.com/@jpoddar"><i class="fa fa-medium" aria-hidden="true"></i></a>
+           </div>
+           <p class='footer-description'>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+           <p class='footer-description'>Created by J Poddar.</p>
+       </div>
+
+    </body>
+</html>
